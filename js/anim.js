@@ -9,7 +9,6 @@ var LogoAnimation = {
             var letterData = LogoData[key],
                 letter = key;
 
-            this.elemIter = 0;
             for (key in letterData) {
                 var id = "logo__" + letter + "__"  + key;
                 this.drawLetter(id, letterData[key]);
