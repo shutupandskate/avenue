@@ -6,7 +6,6 @@ body {
   overflow: hidden;
 }
 
-
 .logo__container {
   width: 450px;
   margin: 0 auto;
@@ -24,17 +23,42 @@ body {
   bottom: 5%;
   left: 40%;
 
+  -webkit-animation: move-to-corner 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation: move-to-corner 2s;
+  animation-fill-mode: forwards;
+}
 
-  -webkit-transform: rotate(-30deg) translateY(20%);
-  -moz-transform: rotate(-30deg) translateY(20%); 
-  -ms-transform: rotate(-30deg) translateY(20%); 
-  -o-transform: rotate(-30deg) translateY(20%);
-  transform: rotate(-30deg) translateY(20%);
 
-  -webkit-transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-  -ms-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+@-webkit-keyframes move-to-corner {
+    from {
+      bottom: 5%;
+      left: 40%;
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      bottom: -25%;
+      left: 56%;
+      -webkit-transform: rotate(-30deg);
+    }
+}
 
+@keyframes move-to-corner {
+    from {
+      bottom: 5%;
+      left: 40%;
+      transform: rotate(0deg);
+    }
+    to {
+      bottom: -25%;
+      left: 56%;
+      transform: rotate(-30deg);
+    }
+}
+
+.ie .logo__container {
+  display: none;
+}
+.ie .letter__container {
+  display: none;
 }
